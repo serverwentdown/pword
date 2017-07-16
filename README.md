@@ -36,18 +36,18 @@ COMMANDS:
 
 GLOBAL OPTIONS:
     --count NUM, -c NUM   Generates NUM passwords for you to choose from
-	--one, -1             Equivalent to -c 1
+    --one, -1             Equivalent to -c 1
     --stronger            Chooses from a list of 7,776 words
 ```
 
 # Modes
 
-# Online
+## Online
 
 This mode generates a 4-word password from the 1,296-word list. The number of possible combinations would be 
 
 ```
-1,296⁴ = 2,821,109,907,456
+1,296 ^ 4 = 2,821,109,907,456
 ```
 
 If an attacker could brute-force passwords on a website at 1,000 requests/second (where he would definitely hit rate limits), it would take about
@@ -58,12 +58,12 @@ If an attacker could brute-force passwords on a website at 1,000 requests/second
 
 years to crack it. This is secure enough for online websites.  
 
-# Offline
+## Offline
 
 This mode generates a 6-word password. This equates to
 
 ```
-1,296⁶ = 4,738,381,338,321,616,896
+1,296 ^ 6 = 4,738,381,338,321,616,896
 ```
 
 possible combinations. With the MD5 hash and [8 Nvidia GTX 1080 GPUs](https://gist.github.com/epixoip/a83d38f412b4737e99bbef804a270c40) cracking the password would take about
@@ -80,12 +80,12 @@ years to crack. That would cost the attacker a lot of energy. If the password wa
 
 years to crack. This is definitely secure enough for offline use (your laptop's password, encrypted drive)
 
-# Crypto
+## Crypto
 
 This mode generates a 8-word password. There would be
 
 ```
-1,296⁸ = 7,958,661,109,946,400,884,391,936
+1,296 ^ 8 = 7,958,661,109,946,400,884,391,936
 ```
 
 possible combinations, and would take about
