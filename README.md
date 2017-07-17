@@ -9,10 +9,10 @@ Generate secure passwords.
 
 ```
 $ pword online
-amiable obvious abdomen vogue
-hexagon xerox collarbone syringes
-double walrus judiciary olympics
-enquirer mammal saltshaker guitar
+wipeout doorstep copier announcer
+pantyhose drainpipe wikipedia glycerin
+remote receipt aidless ladder
+makeover tattoo generator yogurt
 ```
 
 It is based on the concept behind [XKCD 936](https://xkcd.com/936/) and [XKCD-password-generator](https://github.com/redacted/XKCD-password-generator). It makes use of [EFF's typo-tolerant wordlist](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases) to provide live autocomplete.
@@ -22,22 +22,27 @@ It is based on the concept behind [XKCD 936](https://xkcd.com/936/) and [XKCD-pa
 ```
 $ pword help
 NAME:
-    pword - generate secure passwords
+   pword - generate secure passwords
 
 USAGE:
-    pword command [options]
+   pword [global options] command [command options] [arguments...]
+
+VERSION:
+   0.1.0
 
 COMMANDS:
-    help, h  Shows a list of commands or help for one command
-    online   Generates passwords for use on websites
-    offline  Generates passwords for use offline (laptops, encrypted drives)
-    crypto   Generates extremely secure passwords
-    recall   Utility with autocomplete to help you recall passwords
+     online   Generates passwords for use on websites
+     offline  Generates passwords for use offline (laptops, encrypted drives)
+     crypto   Generates extremely secure passwords
+     recall   Utility with autocomplete to help you recall passwords
+     help, h  Shows a list of commands or help for one command
 
 GLOBAL OPTIONS:
-    --count NUM, -c NUM   Generates NUM passwords for you to choose from
-    --one, -1             Equivalent to -c 1
-    --stronger            Chooses from a list of 7,776 words
+   --count NUM, -c NUM  Generates NUM passwords for you to choose from (default: "auto")
+   -1                   Equivalent to --count 1
+   --stronger           Chooses from a list of 7,776 words instead
+   --help, -h           show help
+   --version, -v        print the version
 ```
 
 # Modes
