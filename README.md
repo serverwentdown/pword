@@ -17,7 +17,7 @@ makeover tattoo generator yogurt
 
 It is based on the concept behind [XKCD 936](https://xkcd.com/936/) and [XKCD-password-generator](https://github.com/redacted/XKCD-password-generator). It makes use of [EFF's typo-tolerant wordlist](https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases) to provide live autocomplete.
 
-# Usage
+# CLI Usage
 
 ```
 $ pword help
@@ -43,6 +43,14 @@ GLOBAL OPTIONS:
    --stronger           Chooses from a list of 7,776 words instead
    --help, -h           show help
    --version, -v        print the version
+```
+
+# Library Usage
+
+WIP
+
+```
+import "github.com/serverwentdown/pword/pw"
 ```
 
 # Modes
