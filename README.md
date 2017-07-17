@@ -25,7 +25,7 @@ NAME:
     pword - generate secure passwords
 
 USAGE:
-    greet command [options]
+    pword command [options]
 
 COMMANDS:
     help, h  Shows a list of commands or help for one command
