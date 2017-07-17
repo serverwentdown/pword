@@ -3,8 +3,6 @@ package pw
 //go:generate go run words_generate.go 
 
 import (
-	"log"
-
 	"strings"
 	"crypto/rand"
 	"math/big"
@@ -37,16 +35,20 @@ func NewGenerator(m Mode, s Strength) Generator {
 	}
 }
 
-func (g Generator) Next() string {
+func (g Generator) Next() (string, error) {
 	n := int(g.Strength)
 	s := []string{}
 	for i := 0; i < n; i++ {
-		s = append(s, g.GenerateWord());
+		w, err := g.GenerateWord()
+		if err != nil {
+			return "", err
+		}
+		s = append(s, w)
 	}
-	return strings.Join(s, " ")
+	return strings.Join(s, " "), nil
 }
 
-func (g Generator) GenerateWord() string {
+func (g Generator) GenerateWord() (string, error) {
 	var wordsList []string
 	if g.Mode == ModeShort {
 		wordsList = WordsShort
@@ -58,7 +60,7 @@ func (g Generator) GenerateWord() string {
 	c := len(wordsList)
 	i, err := rand.Int(rand.Reader, big.NewInt(int64(c)))
 	if err != nil {
-		log.Fatal(err)
+		return "", err
 	}
-	return wordsList[i.Int64()]
+	return wordsList[i.Int64()], nil
 }
