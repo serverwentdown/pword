@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/serverwentdown/pword/pw"
-	
+
 	"github.com/urfave/cli"
 )
 
@@ -17,46 +17,46 @@ func main() {
 	app.Usage = "generate secure passwords"
 	app.Version = "0.1.0"
 
-	app.Flags = []cli.Flag {
+	app.Flags = []cli.Flag{
 		cli.StringFlag{
-			Name: "count, c",
+			Name:  "count, c",
 			Value: "auto",
 			Usage: "Generates `NUM` passwords for you to choose from",
 		},
 		cli.BoolFlag{
-			Name: "1",
+			Name:  "1",
 			Usage: "Equivalent to --count 1",
 		},
 		cli.BoolFlag{
-			Name: "stronger",
+			Name:  "stronger",
 			Usage: "Chooses from a list of 7,776 words instead",
 		},
 	}
 
 	app.Commands = []cli.Command{
 		{
-			Name: "online",
+			Name:  "online",
 			Usage: "Generates passwords for use on websites",
 			Action: func(c *cli.Context) error {
 				return generate(c, pw.StrengthOnline)
 			},
 		},
 		{
-			Name: "offline",
+			Name:  "offline",
 			Usage: "Generates passwords for use offline (laptops, encrypted drives)",
 			Action: func(c *cli.Context) error {
 				return generate(c, pw.StrengthOffline)
 			},
 		},
 		{
-			Name: "crypto",
+			Name:  "crypto",
 			Usage: "Generates extremely secure passwords",
 			Action: func(c *cli.Context) error {
 				return generate(c, pw.StrengthCrypto)
 			},
 		},
 		{
-			Name: "recall",
+			Name:  "recall",
 			Usage: "Utility with autocomplete to help you recall passwords",
 			Action: func(c *cli.Context) error {
 				return recall(c)
@@ -82,7 +82,7 @@ func generate(c *cli.Context, strength pw.Strength) error {
 	if c.GlobalBool("stronger") {
 		mode = pw.ModeLong
 	}
-	
+
 	g := pw.NewGenerator(mode, strength)
 
 	for i := 0; i < count; i++ {

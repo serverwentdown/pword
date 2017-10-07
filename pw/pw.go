@@ -1,19 +1,19 @@
 package pw
 
-//go:generate go run words_generate.go 
+//go:generate go run words_generate.go
 
 import (
-	"strings"
 	"crypto/rand"
 	"math/big"
+	"strings"
 )
 
 type Strength int
 
 const (
-	StrengthOnline Strength = 4
+	StrengthOnline  Strength = 4
 	StrengthOffline Strength = 6
-	StrengthCrypto Strength = 8
+	StrengthCrypto  Strength = 8
 )
 
 type Mode int
@@ -30,7 +30,7 @@ type Generator struct {
 
 func NewGenerator(m Mode, s Strength) Generator {
 	return Generator{
-		Mode: m,
+		Mode:     m,
 		Strength: s,
 	}
 }

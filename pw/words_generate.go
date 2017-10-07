@@ -4,9 +4,9 @@ package main
 
 import (
 	"log"
-	
-	"os"
+
 	"bufio"
+	"os"
 	"text/template"
 	"time"
 )
@@ -22,13 +22,13 @@ func main() {
 	defer f.Close()
 
 	packageTemplate.Execute(f, struct {
-		Timestamp time.Time
+		Timestamp  time.Time
 		WordsShort []string
-		WordsLong []string
+		WordsLong  []string
 	}{
-		Timestamp: time.Now(),
+		Timestamp:  time.Now(),
 		WordsShort: wordsShort,
-		WordsLong: wordsLong,
+		WordsLong:  wordsLong,
 	})
 }
 
